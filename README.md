@@ -1,6 +1,6 @@
-# Accessibility Checker Web Application
+# Accessibility Perspective Web Application
 
-Beautiful, professional web interface for the Accessibility Checker tool with neumorphic design and slate blue gradients.
+Beautiful, professional web interface for the Accessibility Perspective tool with neumorphic design and slate blue gradients.
 
 ## 🚀 Live Demo
 

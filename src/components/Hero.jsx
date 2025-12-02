@@ -6,7 +6,7 @@ function Hero() {
       <div className="hero-content">
         <div className="hero-icon-sphere" role="presentation" aria-hidden="true"></div>
         <h1 className="hero-title">
-          Accessibility Checker
+          Accessibility Perspective
         </h1>
         <p className="hero-subtitle">
           Professional WCAG Compliance Auditing Tool
