@@ -33,7 +33,10 @@
 
 .score-header h2 {
   font-size: 1.75rem;
-  color: #2d3748;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 0.5rem;
 }
 
@@ -126,6 +129,10 @@
   margin-top: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .score-excellent {
@@ -291,7 +298,10 @@
 
 /* Section title text */
 .section-title-text {
-  color: #2d3748;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 [data-theme="dark"] .section-title-text {
