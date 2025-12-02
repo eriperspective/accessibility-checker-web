@@ -2,6 +2,10 @@
 
 Beautiful, professional web interface for the Accessibility Perspective tool with neumorphic design and slate blue gradients.
 
+## 🦆 Built with goose AI-Assisted Development
+
+This project started as a CLI tool built entirely with goose AI-assisted development. After seeing its potential, I expanded it into a full-fledged web application - all powered by goose throughout the entire development process.
+
 ## 🚀 Live Demo
 
 **Try it now:** [https://accessibility-perspective.vercel.app](https://accessibility-perspective.vercel.app)
@@ -211,7 +215,7 @@ MIT License - see LICENSE file for details
 
 ## Credits
 
-Built with ❤️ using goose AI-assisted development
+This entire project was built with ❤️ using **goose AI-assisted development** - from the initial CLI tool to the full web application you see today.
 
 ## Author
 
