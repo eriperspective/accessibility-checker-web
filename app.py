@@ -206,6 +206,11 @@ def check_accessibility():
     except Exception as e:
         return jsonify({'error': f'An error occurred: {str(e)}'}), 500
 
+@app.route('/')
+def index():
+    """Root endpoint"""
+    return jsonify({'message': 'Accessibility Checker API', 'status': 'running'}), 200
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
