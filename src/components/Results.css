@@ -207,6 +207,16 @@
 .summary-icon {
   font-size: 3rem;
   line-height: 1;
+  animation: subtleBounce 2s ease-in-out infinite;
+}
+
+@keyframes subtleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .summary-content {
