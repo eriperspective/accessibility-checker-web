@@ -2,6 +2,10 @@
 
 Beautiful, professional web interface for the Accessibility Checker tool with neumorphic design and slate blue gradients.
 
+## 🚀 Live Demo
+
+**Try it now:** [https://accessibility-perspective.vercel.app](https://accessibility-perspective.vercel.app)
+
 ## Features
 
 - 🎨 **Modern Neumorphic Design** - Beautiful soft UI with depth and shadows
@@ -212,6 +216,14 @@ Built with ❤️ using goose AI-assisted development
 ## Author
 
 **[@eriperspective](https://github.com/eriperspective)**
+
+---
+
+## Links
+
+- **Live App:** [https://accessibility-perspective.vercel.app](https://accessibility-perspective.vercel.app)
+- **API:** [https://accessibility-checker-api.onrender.com](https://accessibility-checker-api.onrender.com)
+- **GitHub:** [https://github.com/eriperspective/accessibility-checker-web](https://github.com/eriperspective/accessibility-checker-web)
 
 ---
 
