@@ -37,6 +37,13 @@
   margin-bottom: 0.5rem;
 }
 
+[data-theme="dark"] .score-header h2 {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .scanned-url {
   color: var(--text-muted);
   font-size: 0.95rem;
@@ -278,6 +285,10 @@
 /* Section title text - dark slate blue */
 .section-title-text {
   color: #2d3748;
+}
+
+[data-theme="dark"] .section-title-text {
+  color: #e2e8f0;
 }
 
 .issues-list {

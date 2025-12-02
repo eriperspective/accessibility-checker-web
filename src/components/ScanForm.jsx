@@ -24,7 +24,7 @@ function ScanForm({ onScan, loading, onReset, hasResults }) {
         </h2>
         <p className="form-description">
           {hasResults 
-            ? 'View your results below or start a new scan'
+            ? 'View Your Results Below Or Start A New Scan'
             : 'Analyze any website for WCAG accessibility compliance'
           }
         </p>
