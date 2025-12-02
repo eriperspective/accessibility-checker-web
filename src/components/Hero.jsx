@@ -1,0 +1,24 @@
+import './Hero.css'
+
+function Hero() {
+  return (
+    <header className="hero" role="banner">
+      <div className="hero-content">
+        <div className="hero-icon-sphere" role="presentation" aria-hidden="true"></div>
+        <h1 className="hero-title">
+          Accessibility Checker
+        </h1>
+        <p className="hero-subtitle">
+          Professional WCAG Compliance Auditing Tool
+        </p>
+        <div className="hero-badge" role="note">
+          Powered by AI-Assisted Development
+        </div>
+      </div>
+      <div className="hero-gradient" aria-hidden="true"></div>
+    </header>
+  )
+}
+
+export default Hero
+

@@ -1,0 +1,182 @@
+.scan-form-container {
+  margin: 2rem 0;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.scan-form-card {
+  background: var(--bg-primary);
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.5rem;
+}
+
+.form-description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.scan-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.url-input {
+  width: 100%;
+  padding: 1.25rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 20px;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-inset);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.url-input:focus {
+  outline: none;
+  box-shadow: var(--shadow-inset), 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+.url-input::placeholder {
+  color: var(--text-muted);
+}
+
+.url-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.scan-button {
+  padding: 1.25rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  color: white;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scan-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.scan-button:hover:not(:disabled)::before {
+  opacity: 1;
+}
+
+.scan-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.scan-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.button-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.new-scan-button {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .scan-form-card {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-description {
+    font-size: 0.9rem;
+  }
+
+  .url-input {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .scan-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
