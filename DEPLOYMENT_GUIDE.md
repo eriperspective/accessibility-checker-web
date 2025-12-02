@@ -56,7 +56,42 @@ You should see: `{"status": "healthy"}`
 
 ---
 
-## Part 2: Deploy Frontend (React) to Vercel
+## Part 2: Keep API Awake with UptimeRobot (Optional but Recommended)
+
+Since Render's free tier sleeps after 15 minutes, I can use UptimeRobot to keep my API awake 24/7.
+
+### Step 1: Sign Up for UptimeRobot
+1. Go to [uptimerobot.com](https://uptimerobot.com)
+2. Click "Register for FREE"
+3. Create account with email and password
+4. Verify email
+
+### Step 2: Add New Monitor
+1. Once logged in, click **"+ Add New Monitor"**
+2. Fill in these settings:
+   - **Monitor Type:** HTTP(s)
+   - **Friendly Name:** `Accessibility Perspective API`
+   - **URL (or IP):** `https://accessibility-checker-api.onrender.com/api/health`
+   - **Monitoring Interval:** `5 Minutes` (free tier minimum)
+
+### Step 3: Create Monitor
+1. Click **"Create Monitor"**
+2. That's it! ✅
+
+### What This Does:
+- UptimeRobot pings my API every 5 minutes
+- Keeps Render awake and prevents dormancy
+- I get email alerts if API goes down
+- Completely free for up to 50 monitors
+
+**Why `/api/health`?**
+This is a lightweight endpoint that just returns `{"status": "healthy"}`. It's designed for health checks and doesn't waste resources.
+
+**My API now stays warm 24/7!** 🚀
+
+---
+
+## Part 3: Deploy Frontend (React) to Vercel
 
 ### Step 1: Update API URL in Code
 
@@ -107,7 +142,7 @@ Vercel should auto-detect these, but verify:
 
 ---
 
-## Part 3: Test Everything
+## Part 4: Test Everything
 
 ### Test Your Live App:
 1. Visit your Vercel URL
@@ -124,7 +159,7 @@ Vercel should auto-detect these, but verify:
 
 ---
 
-## Part 4: Custom Domain (Optional)
+## Part 5: Custom Domain (Optional)
 
 ### For Vercel (Frontend):
 1. Go to Project Settings → Domains
