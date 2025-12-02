@@ -1,6 +1,6 @@
 # Deployment Guide
 
-Complete step-by-step guide to deploy your Accessibility Checker web app.
+Complete step-by-step guide to deploy my Accessibility Checker Web Application.
 
 ---
 
@@ -35,7 +35,7 @@ Open in browser: `https://your-app.railway.app/api/health`
 
 You should see: `{"status": "healthy"}`
 
-✅ **Backend deployed!**
+**Backend deployed!**
 
 ---
 
@@ -86,7 +86,7 @@ Vercel should auto-detect these, but verify:
 2. Wait 2-3 minutes
 3. You'll get a URL like: `https://accessibility-checker-web.vercel.app`
 
-✅ **Frontend deployed!**
+ **Frontend deployed!**
 
 ---
 
@@ -163,7 +163,7 @@ Vercel should auto-detect these, but verify:
 2. Commit and push to GitHub
 3. Vercel auto-deploys from `main` branch
 
-**Both platforms auto-deploy on every push!** 🚀
+**Both platforms auto-deploy on every push!** 
 
 ---
 
@@ -175,7 +175,6 @@ Vercel should auto-detect these, but verify:
 
 ### Vercel:
 - **Free:** Unlimited for personal projects
-- **Paid:** $20/month for teams (not needed)
 
 **Total Cost: $0** (free tiers are sufficient!)
 
@@ -187,19 +186,9 @@ After deployment, update these in your README:
 
 - **Live App:** `https://your-app.vercel.app`
 - **API:** `https://your-app.railway.app`
-- **GitHub:** `https://github.com/eriperspective/accessibility-checker-web`
 
----
 
-## Next Steps
-
-1. ✅ Test your live app thoroughly
-2. ✅ Add live URL to your Medium article
-3. ✅ Update GitHub README with live demo link
-4. ✅ Share on LinkedIn/Twitter
-5. ✅ Add to your portfolio
-
-**Congratulations! Your app is live!** 🎉
+**Congratulations! Your app is live!**
 
 ---
 
