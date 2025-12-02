@@ -235,13 +235,6 @@
   font-weight: 500;
 }
 
-[data-theme="dark"] .summary-label {
-  background: linear-gradient(135deg, #8b9bef 0%, #a5b4fc 50%, #c7d2fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
 /* Issues Section */
 .issues-section {
   margin-bottom: 2rem;
@@ -302,7 +295,10 @@
 }
 
 [data-theme="dark"] .section-title-text {
-  color: #e2e8f0;
+  background: linear-gradient(135deg, #8b9bef 0%, #a5b4fc 50%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .issues-list {
