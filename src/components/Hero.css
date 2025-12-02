@@ -80,6 +80,15 @@
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-badge:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
 }
 
 .hero-gradient {

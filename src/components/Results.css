@@ -92,6 +92,16 @@
   font-size: 5rem;
   font-weight: 700;
   line-height: 1;
+  animation: scoreBounce 2.5s ease-in-out infinite;
+}
+
+@keyframes scoreBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 /* Score number gradient based on score value */
