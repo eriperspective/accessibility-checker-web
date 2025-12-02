@@ -18,8 +18,10 @@
 }
 
 .footer-author {
-  color: var(--accent-blue);
-  font-weight: 600;
+  color: #667eea;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 
 .heart {
