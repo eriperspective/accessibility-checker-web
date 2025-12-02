@@ -82,7 +82,29 @@
   font-size: 5rem;
   font-weight: 700;
   line-height: 1;
-  color: #667eea;
+}
+
+/* Score number gradient based on score value */
+.score-excellent .score-number,
+.score-good .score-number {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.score-fair .score-number {
+  background: linear-gradient(135deg, #ed8936 0%, #f6ad55 50%, #fbd38d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.score-poor .score-number {
+  background: linear-gradient(135deg, #c53030 0%, #f56565 50%, #fc8181 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .score-max {
@@ -185,6 +207,14 @@
   margin-bottom: 0.5rem;
 }
 
+/* Gradient numbers on summary cards */
+.gradient-number {
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .summary-label {
   font-size: 1rem;
   color: var(--text-secondary);
@@ -207,6 +237,47 @@
 
 .title-icon {
   font-size: 1.75rem;
+}
+
+.lightbulb-icon svg {
+  stroke: #667eea;
+}
+
+/* Icon colors with glow effects */
+.critical-icon svg {
+  stroke: #f56565;
+  filter: drop-shadow(0 0 8px rgba(245, 101, 101, 0.6));
+}
+
+.warning-icon svg {
+  stroke: #fbbf24;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.6));
+}
+
+.passed-icon svg {
+  stroke: #10b981;
+  filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.6));
+}
+
+/* Section title icons with glow */
+.critical-title-icon svg {
+  stroke: #f56565;
+  filter: drop-shadow(0 0 6px rgba(245, 101, 101, 0.5));
+}
+
+.warning-title-icon svg {
+  stroke: #fbbf24;
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.5));
+}
+
+.passed-title-icon svg {
+  stroke: #10b981;
+  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.5));
+}
+
+/* Section title text - dark slate blue */
+.section-title-text {
+  color: #2d3748;
 }
 
 .issues-list {
@@ -234,14 +305,17 @@
 
 .critical-issue {
   border-left-color: #f56565;
+  box-shadow: var(--shadow-light), -4px 0 12px rgba(245, 101, 101, 0.15);
 }
 
 .warning-issue {
-  border-left-color: #ed8936;
+  border-left-color: #fbbf24;
+  box-shadow: var(--shadow-light), -4px 0 12px rgba(251, 191, 36, 0.15);
 }
 
 .passed-check {
-  border-left-color: #48bb78;
+  border-left-color: #10b981;
+  box-shadow: var(--shadow-light), -4px 0 12px rgba(16, 185, 129, 0.15);
 }
 
 .issue-type {
