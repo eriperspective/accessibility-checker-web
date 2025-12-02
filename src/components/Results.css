@@ -318,17 +318,11 @@
 
 /* Section title text */
 .section-title-text {
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #4a5568;
 }
 
 [data-theme="dark"] .section-title-text {
-  background: linear-gradient(135deg, #8b9bef 0%, #a5b4fc 50%, #c7d2fe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #e2e8f0;
 }
 
 .issues-list {
