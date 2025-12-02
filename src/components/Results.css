@@ -33,7 +33,7 @@
 
 .score-header h2 {
   font-size: 1.75rem;
-  color: var(--text-primary);
+  color: #2d3748;
   margin-bottom: 0.5rem;
 }
 
@@ -222,10 +222,24 @@
   background-clip: text;
 }
 
+[data-theme="dark"] .gradient-number {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e0 50%, #a0aec0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .summary-label {
   font-size: 1rem;
   color: var(--text-secondary);
   font-weight: 500;
+}
+
+[data-theme="dark"] .summary-label {
+  background: linear-gradient(135deg, #8b9bef 0%, #a5b4fc 50%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Issues Section */
@@ -282,7 +296,7 @@
   filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.5));
 }
 
-/* Section title text - dark slate blue */
+/* Section title text */
 .section-title-text {
   color: #2d3748;
 }
