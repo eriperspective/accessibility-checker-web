@@ -6,6 +6,7 @@ import Results from './components/Results'
 import Footer from './components/Footer'
 import ThemeToggle from './components/ThemeToggle'
 import SkipLink from './components/SkipLink'
+import BackToTop from './components/BackToTop'
 
 function App() {
   const [results, setResults] = useState(null)
@@ -49,6 +50,7 @@ function App() {
     <div className="app">
       <SkipLink />
       <ThemeToggle />
+      <BackToTop />
       <Hero />
       <main id="main-content" className="main-content" tabIndex="-1">
         <ScanForm 

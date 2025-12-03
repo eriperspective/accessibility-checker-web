@@ -1,0 +1,80 @@
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top svg {
+  width: 24px;
+  height: 24px;
+  color: #667eea; /* Lighter slate blue */
+  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5)); /* Subtle glow */
+  transition: all 0.3s ease;
+}
+
+.back-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.back-to-top:hover svg {
+  filter: drop-shadow(0 0 12px rgba(102, 126, 234, 0.7)); /* Stronger glow on hover */
+  transform: translateY(-2px);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+.back-to-top:focus-visible {
+  outline: 3px solid var(--accent-blue);
+  outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 50px;
+    height: 50px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .back-to-top {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transform: none !important;
+  }
+  
+  .back-to-top:hover {
+    transform: none;
+  }
+}
+
