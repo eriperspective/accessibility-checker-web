@@ -8,7 +8,7 @@ function Footer() {
           Made by <span className="footer-author">eriperspective</span>
         </p>
         <p className="footer-text">
-          Built with <span className="heart" aria-label="love">❤️</span> powered by goose by Block and Claude by Anthropic AI Development
+          Built with <span className="heart" aria-label="love">❤️</span> powered with goose by Block and Claude by Anthropic AI Development
         </p>
         <nav className="footer-links" aria-label="Footer navigation">
           <a 
