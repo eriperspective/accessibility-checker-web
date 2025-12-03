@@ -36,7 +36,7 @@
 }
 
 .heart {
-  color: #f56565;
+  color: #7c8ff0; /* Medium-light slate blue */
   animation: heartbeat 1.5s ease-in-out infinite;
   display: inline-block;
 }
