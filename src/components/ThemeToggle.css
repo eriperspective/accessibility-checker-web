@@ -30,10 +30,13 @@
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
+  color: #667eea; /* Lighter slate blue */
+  filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5)); /* Subtle glow */
 }
 
 .theme-toggle:hover svg {
   transform: scale(1.1);
+  filter: drop-shadow(0 0 12px rgba(102, 126, 234, 0.7)); /* Stronger glow on hover */
 }
 
 @media (max-width: 768px) {
