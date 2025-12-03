@@ -8,19 +8,9 @@ function Footer() {
           Made by <span className="footer-author">eriperspective</span>
         </p>
         <p className="footer-text">
-          Built with <span className="heart" aria-label="love">❤️</span> using goose AI-assisted development
+          Built with <span className="heart" aria-label="love">❤️</span> powered by goose AI Development
         </p>
         <nav className="footer-links" aria-label="Footer navigation">
-          <a 
-            href="https://github.com/eriperspective/accessibility-checker" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="footer-link"
-          >
-            GitHub
-            <span className="sr-only"> (opens in new tab)</span>
-          </a>
-          <span className="separator" aria-hidden="true">•</span>
           <a 
             href="https://www.w3.org/WAI/WCAG21/quickref/" 
             target="_blank" 
