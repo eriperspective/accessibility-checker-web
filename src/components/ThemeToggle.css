@@ -30,13 +30,22 @@
   width: 24px;
   height: 24px;
   transition: transform 0.3s ease;
-  color: #667eea; /* Lighter slate blue */
+  color: #667eea; /* Lighter slate blue for moon */
   filter: drop-shadow(0 0 8px rgba(102, 126, 234, 0.5)); /* Subtle glow */
+}
+
+[data-theme="dark"] .theme-toggle svg {
+  color: #ffffff; /* White for sun in dark mode */
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.3)); /* White glow */
 }
 
 .theme-toggle:hover svg {
   transform: scale(1.1);
   filter: drop-shadow(0 0 12px rgba(102, 126, 234, 0.7)); /* Stronger glow on hover */
+}
+
+[data-theme="dark"] .theme-toggle:hover svg {
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5)); /* Stronger white glow on hover */
 }
 
 @media (max-width: 768px) {
