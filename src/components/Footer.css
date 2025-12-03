@@ -50,7 +50,7 @@
 }
 
 .footer-link {
-  color: var(--text-muted);
+  color: #667eea; /* Lighter slate blue */
   text-decoration: none;
   font-size: 0.9rem;
   transition: all 0.3s ease;
@@ -59,8 +59,8 @@
 }
 
 .footer-link:hover {
-  color: var(--accent-blue);
-  background: rgba(66, 153, 225, 0.1);
+  color: #8b9bef; /* Even lighter on hover */
+  background: rgba(102, 126, 234, 0.1);
 }
 
 .separator {
