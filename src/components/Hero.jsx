@@ -12,7 +12,7 @@ function Hero() {
           Professional WCAG Compliance Auditing Tool
         </p>
         <div className="hero-badge" role="note">
-          Powered by AI-Assisted Development
+          AI-Assisted
         </div>
       </div>
       <div className="hero-gradient" aria-hidden="true"></div>
