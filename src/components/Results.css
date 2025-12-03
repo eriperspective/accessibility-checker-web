@@ -33,18 +33,12 @@
 
 .score-header h2 {
   font-size: 1.75rem;
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #667eea; /* Lighter slate blue */
   margin-bottom: 0.5rem;
 }
 
 [data-theme="dark"] .score-header h2 {
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #667eea; /* Lighter slate blue */
 }
 
 .scanned-url {
@@ -139,10 +133,7 @@
   margin-top: 1rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background: linear-gradient(135deg, #2d3748 0%, #4a5568 50%, #667eea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #667eea; /* Lighter slate blue */
 }
 
 .score-excellent {
