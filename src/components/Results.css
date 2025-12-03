@@ -107,6 +107,14 @@
   background-clip: text;
 }
 
+[data-theme="dark"] .score-excellent .score-number,
+[data-theme="dark"] .score-good .score-number {
+  background: linear-gradient(135deg, #cbd5e0 0%, #e2e8f0 50%, #8b9bef 100%); /* Lighter gradient for dark mode */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .score-fair .score-number {
   background: linear-gradient(135deg, #ed8936 0%, #f6ad55 50%, #fbd38d 100%);
   -webkit-background-clip: text;
