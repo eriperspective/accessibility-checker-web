@@ -19,7 +19,7 @@ function App() {
     setResults(null)
 
     try {
-      const response = await fetch('https://accessibility-checker-api.onrender.com/api/check', {
+      const response = await fetch('/api/check', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
