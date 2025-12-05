@@ -216,6 +216,9 @@ def health_check():
     """Health check endpoint"""
     return jsonify({'status': 'healthy'}), 200
 
+# Export for Vercel serverless
+handler = app
+
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
 
