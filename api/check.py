@@ -1,10 +1,7 @@
-from flask import Flask, request, jsonify
-from flask_cors import CORS
+from http.server import BaseHTTPRequestHandler
+import json
 import requests
 from bs4 import BeautifulSoup
-
-app = Flask(__name__)
-CORS(app)
 
 def check_images(soup):
     """Check for images without alt text"""
@@ -124,77 +121,102 @@ def calculate_score(critical_count, warning_count, passed_count):
     
     return max(0.0, min(10.0, score))
 
-@app.route('/api/check', methods=['POST'])
-def handler(request):
-    """Vercel serverless function handler"""
-    try:
-        data = request.get_json()
-        url = data.get('url')
-        
-        if not url:
-            return jsonify({'error': 'URL is required'}), 400
-        
-        # Add protocol if missing
-        if not url.startswith(('http://', 'https://')):
-            url = 'https://' + url
-        
-        # Fetch the webpage
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-        response = requests.get(url, headers=headers, timeout=10)
-        response.raise_for_status()
-        
-        # Parse HTML
-        soup = BeautifulSoup(response.content, 'html.parser')
-        
-        # Run all checks
-        all_issues = []
-        all_passed = []
-        
-        all_issues.extend(check_images(soup))
-        all_issues.extend(check_buttons(soup))
-        all_issues.extend(check_links(soup))
-        
-        form_issues, form_passed = check_form_labels(soup)
-        all_issues.extend(form_issues)
-        all_passed.extend(form_passed)
-        
-        heading_issues, heading_passed = check_headings(soup)
-        all_issues.extend(heading_issues)
-        all_passed.extend(heading_passed)
-        
-        lang_issues, lang_passed = check_language(soup)
-        all_issues.extend(lang_issues)
-        all_passed.extend(lang_passed)
-        
-        # Categorize issues
-        critical_issues = [i for i in all_issues if i.get('severity') == 'critical']
-        warnings = [i for i in all_issues if i.get('severity') == 'warning']
-        
-        # Calculate score
-        score = calculate_score(len(critical_issues), len(warnings), len(all_passed))
-        
-        # Build response
-        result = {
-            'url': url,
-            'score': round(score, 1),
-            'summary': {
-                'critical': len(critical_issues),
-                'warnings': len(warnings),
-                'passed': len(all_passed)
-            },
-            'issues': {
-                'critical': critical_issues[:10],
-                'warnings': warnings[:10]
-            },
-            'passed': all_passed[:10]
-        }
-        
-        return jsonify(result), 200
-        
-    except requests.exceptions.RequestException as e:
-        return jsonify({'error': f'Failed to fetch URL: {str(e)}'}), 400
-    except Exception as e:
-        return jsonify({'error': f'An error occurred: {str(e)}'}), 500
-
+class handler(BaseHTTPRequestHandler):
+    def do_POST(self):
+        try:
+            content_length = int(self.headers['Content-Length'])
+            post_data = self.rfile.read(content_length)
+            data = json.loads(post_data.decode('utf-8'))
+            
+            url = data.get('url')
+            
+            if not url:
+                self.send_response(400)
+                self.send_header('Content-type', 'application/json')
+                self.send_header('Access-Control-Allow-Origin', '*')
+                self.end_headers()
+                self.wfile.write(json.dumps({'error': 'URL is required'}).encode())
+                return
+            
+            # Add protocol if missing
+            if not url.startswith(('http://', 'https://')):
+                url = 'https://' + url
+            
+            # Fetch the webpage
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.get(url, headers=headers, timeout=10)
+            response.raise_for_status()
+            
+            # Parse HTML
+            soup = BeautifulSoup(response.content, 'html.parser')
+            
+            # Run all checks
+            all_issues = []
+            all_passed = []
+            
+            all_issues.extend(check_images(soup))
+            all_issues.extend(check_buttons(soup))
+            all_issues.extend(check_links(soup))
+            
+            form_issues, form_passed = check_form_labels(soup)
+            all_issues.extend(form_issues)
+            all_passed.extend(form_passed)
+            
+            heading_issues, heading_passed = check_headings(soup)
+            all_issues.extend(heading_issues)
+            all_passed.extend(heading_passed)
+            
+            lang_issues, lang_passed = check_language(soup)
+            all_issues.extend(lang_issues)
+            all_passed.extend(lang_passed)
+            
+            # Categorize issues
+            critical_issues = [i for i in all_issues if i.get('severity') == 'critical']
+            warnings = [i for i in all_issues if i.get('severity') == 'warning']
+            
+            # Calculate score
+            score = calculate_score(len(critical_issues), len(warnings), len(all_passed))
+            
+            # Build response
+            result = {
+                'url': url,
+                'score': round(score, 1),
+                'summary': {
+                    'critical': len(critical_issues),
+                    'warnings': len(warnings),
+                    'passed': len(all_passed)
+                },
+                'issues': {
+                    'critical': critical_issues[:10],
+                    'warnings': warnings[:10]
+                },
+                'passed': all_passed[:10]
+            }
+            
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps(result).encode())
+            
+        except requests.exceptions.RequestException as e:
+            self.send_response(400)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'error': f'Failed to fetch URL: {str(e)}'}).encode())
+        except Exception as e:
+            self.send_response(500)
+            self.send_header('Content-type', 'application/json')
+            self.send_header('Access-Control-Allow-Origin', '*')
+            self.end_headers()
+            self.wfile.write(json.dumps({'error': f'An error occurred: {str(e)}'}).encode())
+    
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
+        self.end_headers()
